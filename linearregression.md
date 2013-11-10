@@ -10,7 +10,7 @@ J(θ)= 1/(2*m) * Sum (hθ(x(i))−y(i))^2
 ```
 
 ```
-hθ(x) = θ0+θ1*x1 = Trans θ * x
+hθ(x) = θ0 + θ1 * x1 = Trans θ * X
 ```
 
 The parameters of your model are the θj values. These are the values you searh for.  
