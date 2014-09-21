@@ -1,8 +1,5 @@
 Linear regression
 =======================
-
-Notes taken from Standford's "Machine Learning" course by Andrew Ng
-
 The objective of linear regression is to minimize the cost function: 
 
 ```
