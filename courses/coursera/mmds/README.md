@@ -1,5 +1,7 @@
-Notes related to Stanford Course "Mining Massive Datasets" 
-=========================================================
+"Mining Massive Datasets" at Stanford  
+=====================================
+Notes related to Coursera Course 
+
 See announce: 
 http://anand.typepad.com/datawocky/2014/09/stanford-big-data-course-now-open-to-the-world.html 
 with links to Coursera and Textbook for free download

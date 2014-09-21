@@ -1,2 +1,3 @@
-Notes taken from Standford's "Machine Learning" course by Andrew Ng
-===================================================================
+"Machine Learning" at Stanford University by Andrew Ng
+======================================================
+Notes taken from Coursera course
