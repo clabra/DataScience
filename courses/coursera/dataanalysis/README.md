@@ -1,1 +1,2 @@
-Notes, exercises, etc. from Coursera course "Data Analysis" Johns Hopkins 
+Notes, exercises, etc. from Coursera course "Data Analysis" at Johns Hopkins 
+============================================================================
