@@ -56,6 +56,7 @@ si, i standard deviation is square root of (SUMSQi/N) - (SUMi/N)^2
 
 Two questions: 
 - How to decide if a point is near enough to assign it to a cluster?
+
 Mahalanobis distance is used measuring the likelihood of point belonging to currently nearest centroid 
 
 ```
@@ -82,6 +83,7 @@ On the other hand, we know in a normal (gaussian) distribution:
 ```
 
 - How to decide if two compressed sets should be combined into one?
+
 Combine if the combined variance is below some threshold  
 
 Many alternatives: consider dimensions diffrently, consider density 
