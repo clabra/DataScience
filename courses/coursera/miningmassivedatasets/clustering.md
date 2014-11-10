@@ -68,11 +68,13 @@ Normalized distance of point to centroid is:
 Mahalanobian distance of point P to centroid C is: 
     MD = square_root(sum(yi^2))
 
-Accept point P in into cluster C if its MD is less than a threshold, e.g. 3*square_root(d)
+Accept point P into cluster C if its MD is less than a threshold, e.g. 3*square_root(d)
 
 Rationale of this threshold: 
 If a point is one standard deviation away from centroid then: 
     MD = square_root(d)
+so, points with a MD <= square_root(d) are nearest than one standard deviation. Similarly: 
+    3s<-> 3*square_root(d)
 On the other hand, we know in a normal (gaussian) distribution: 
     68% of points are inside [-s, s] range
     95% are inside [-2s, 2s]
