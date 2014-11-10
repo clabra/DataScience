@@ -28,7 +28,8 @@ BFR algoritm can do the same that k-means clustering but in one pass over the da
 
 As all k-means algorithm it assumes an Euclidean space but makes also another strong assumption: that each cluster is normally distributed around a centroid in such a way that: 
 
-- we can quantify the likelihood of finding a point in the cluster at a given distance from the centroid in each dimension - standard deviations in different dimensions may vary
+- we can quantify the likelihood of finding a point in the cluster at a given distance from the centroid in each dimension 
+- standard deviations in different dimensions may vary
 
 This assumption implies that clusters look like axis-aligned ellipsis. 
 
@@ -40,37 +41,47 @@ The algorithm use three types of data sets:
 For each chunk of points: 
 - find those points that are "sufficiently close" to a cluster centroid
 - assign them to the cluster and the DS
-- update statistics of each cluster: N (number of points), SUMi(sum of point coordinates in each dimension) and SUMSQs(sum of square root of point coordinates in each dimension). i standard deviation is square root of (SUMSQi/N) - (SUMi/N)^2
-- remaining points aren't close to any cluster. Use any in-memory clustering algorithm to cluster these points an the old RS. Clusters go to the CS, outlying points to the RS
+- update statistics of each cluster: 
+
+```
+N, number of points
+SUMi, sum of point coordinates in each dimension 
+SUMSQi, sum of square root of point coordinates in each dimension
+si, i standard deviation is square root of (SUMSQi/N) - (SUMi/N)^2
+```
+
+- remaining points aren't close to any cluster. Use any in-memory clustering algorithm to cluster these points and the old RS. Clusters go to the CS, outlying points to the RS
 - consider merging compressed sets in the CS
 - if this is the last step, merge all compressed sets in the CS and all the RS points into their nearest cluster
 
-Two details: 
-- how to decide if a point is near enough to assign it to a cluster?
+Two questions: 
+- How to decide if a point is near enough to assign it to a cluster?
 Mahalanobis distance is used measuring the likelihood of point belonging to currently nearest centroid 
 
 ```
 Cluster has centroid C = (c1,...,cd) and standard deviations (s1,...,sd)
 Point P = (x1,...,xd)
-Standard deviations (s1,...,sd)
-Normalized distance yi = (xi-ci)/si
-Mahalanobian distance of point P from centroid C is: 
+
+Normalized distance of point to centroid is: 
+    yi = (xi-ci)/si
+
+Mahalanobian distance of point P to centroid C is: 
     MD = square_root(sum(yi^2))
 
 Accept point P in into cluster C if its MD is less than a threshold, e.g. 3*square_root(d)
 
-Rationale of this: 
-if a point is one standard deviation away from centroid then: 
+Rationale of this threshold: 
+If a point is one standard deviation away from centroid then: 
     MD = square_root(d)
-on the other hand, we know in a normal (gaussian) distribution: 
-68% of points are inside [-s, s] range
-95% are inside [-2s, 2s]
-99% are inside [-3s, 3s] <- this looks a threshold good enough 
+On the other hand, we know in a normal (gaussian) distribution: 
+    68% of points are inside [-s, s] range
+    95% are inside [-2s, 2s]
+    99% are inside [-3s, 3s] <- this looks a threshold good enough 
 ```
 
-- how to decide if two compressed sets should be combined into one?
-combine if the combined variance is below some threshold  
+- How to decide if two compressed sets should be combined into one?
+Combine if the combined variance is below some threshold  
 
-many alternatives: consider dimensions diffrently, consider density 
+Many alternatives: consider dimensions diffrently, consider density 
 
 
