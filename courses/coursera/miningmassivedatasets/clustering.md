@@ -55,7 +55,7 @@ si, i standard deviation is square root of (SUMSQi/N) - (SUMi/N)^2
 - if this is the last step, merge all compressed sets in the CS and all the RS points into their nearest cluster
 
 Two questions: 
-- How to decide if a point is near enough to assign it to a cluster?
+- **How to decide if a point is near enough to assign it to a cluster?**
 
 Mahalanobis distance is used, it measures the likelihood of point belonging to currently nearest centroid 
 
@@ -68,9 +68,11 @@ Normalized distance of point to centroid is:
 
 Mahalanobian distance of point P to centroid C is: 
     MD = square_root(sum(yi^2))
+```
 
 **Accept point P into cluster C if its MD is less than a threshold, e.g. 3*square_root(d)**
 
+```
 Rationale of this threshold: 
 If a point is one standard deviation away from centroid then: 
     MD = square_root(d)
@@ -82,7 +84,7 @@ On the other hand, we know in a normal (gaussian) distribution:
     99% are inside [-3s, 3s] <- this looks a threshold good enough 
 ```
 
-- How to decide if two compressed sets should be combined into one?
+- **How to decide if two compressed sets should be combined into one?**
 
 Combine if **the combined variance is below some threshold** 
 
