@@ -20,8 +20,8 @@ Convert documents, emails, etc. to sets in order to convert a problem of documen
 Jaccard Similarity  = sets intersection / sets union
 ```
 
-Similar documents have similar k-shingles
-Change a word only affects k-shingles within distance k from the word and reordering paragraphs only affects the 2k shigles that cross paragraphs boundaries  
+- Similar documents have similar k-shingles
+- Change a word only affects k-shingles within distance k from the word and reordering paragraphs only affects the 2k shigles that cross paragraphs boundaries  
 
 
 ## Minhashing: signatures
@@ -30,8 +30,9 @@ We can compress a long number of shingles hashing them to tokens with (say) 4 by
 Minhashing is a technique to convert large sets to short signatures preserving similarity. In order to achive this, we can use a matrix representation of sets. In each row put one element of the set of all possibles k-shingles. In columns, put sets (documents) 
 
 element (possible k-shingle)  |   set 1 (document 1)  |   set2 (document 2)  |   
-aba                                     1                       0
-aca                                     0                       0
+-- | -- | -- 
+aba | 0 | 1
+aca | 0 | 0
 
 1 means the set (document) contains the element given by the row
 
