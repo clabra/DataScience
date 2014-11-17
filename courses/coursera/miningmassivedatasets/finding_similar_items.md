@@ -60,12 +60,15 @@ Permute a very large matrix M with millions or billions of rows is very time con
 A good approximation to permuting rows: pick, say, 100 hash functions. For each column c and each hash function hi , keep a “slot” M(i, c). Intent: M(i, c) will become the smallest value of hi(r) for which column c has 1 in row r. Note hi(r) is a hash (not minhash) function applied to the number of row, eg.: 
 
 hi(r) = x + 1 mod 5 
-row |   hi(r)
-0       1
-1       2
-2       3
-3       4
-4       0
+
+| row index | hi(r) |
+|-----------|-------|
+| 0         | 1     |
+| 1         | 2     |
+| 2         | 3     |
+| 3         | 4     |
+| 4         | 0     |
+
 
 See computing method explained and examples in "Mining massive datasets" book, page 83 
 
