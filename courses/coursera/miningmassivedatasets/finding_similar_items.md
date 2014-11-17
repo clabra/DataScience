@@ -29,25 +29,32 @@ We can compress a long number of shingles hashing them to tokens with (say) 4 by
 
 Minhashing is a technique to convert large sets to short signatures preserving similarity. In order to achive this, we can use a matrix representation of sets. In each row put one element of the set of all possibles k-shingles. In columns, put sets (documents) 
 
-element (possible k-shingle)  |   set 1 (document 1)  |   set2 (document 2)  |   
--- | -- | -- 
-aba | 0 | 1
-aca | 0 | 0
+| element (possible k-shingle) | set 1 (document 1) | set2 (document 2) |   |   |
+|------------------------------|--------------------|-------------------|---|---|
+| aba                          | 1                  | 0                 |   |   |
+| abc                          | 0                  |                   |   |   |
+|                              |                    |                   |   |   |
 
 1 means the set (document) contains the element given by the row
 
 Another example: rows could be products and columns could be customers represented by the set of products they bought
 
-- algorithm in theory: 
+### algorithm theory: 
 Let's order the rows in multiple permutations (say 100 or several hundred). For each row, we assign a minhash value to a set Si given by minhash function h. The value is the element in the first row for which column has a non 0 value  
 
 ```
-Surprising property: the probability that the minhash function for a random permutation of rows produces the same value for two sets equals the Jaccard similarity of those sets. Thus, the expected similarity of two signatures equals the Jaccard similarity of the columns or sets that the signatures represent. And the longer the signatures, the smaller will be the expected error.  
+Surprising property: the probability that the minhash function for a random permutation of rows produces 
+the same value for two sets equals the Jaccard similarity of those sets. Thus, the expected similarity 
+of two signatures equals the Jaccard similarity of the columns or sets that the signatures represent. 
+And the longer the signatures, the smaller will be the expected error.  
 
-For n permutations of rows we have n minhash functions: h1, h2, ..., hn. For the column representing set S, construct the minhash signature for S, the vector [h1(S), h2(S),...,hn(S)]. Thus, we can form a signature matrix in which the ith column of original matrix M is replaced by the minhash signature for the set in the ith column. Signature matrix will have only n colums and will be much smaller than the initial sparse matrix M
+For n permutations of rows we have n minhash functions: h1, h2, ..., hn. For the column representing set S, 
+construct the minhash signature for S, the vector [h1(S), h2(S),...,hn(S)]. Thus, we can form a signature 
+matrix in which the ith column of original matrix M is replaced by the minhash signature for the set in the 
+ith column. Signature matrix will have only n colums and will be much smaller than the initial sparse matrix M
 ```
 
-- algorithm implementation: 
+### algorithm implementation for big data: 
 Permute a very large matrix M with millions or billions of rows is very time consuming. 
 
 A good approximation to permuting rows: pick, say, 100 hash functions. For each column c and each hash function hi , keep a “slot” M(i, c). Intent: M(i, c) will become the smallest value of hi(r) for which column c has 1 in row r. Note hi(r) is a hash (not minhash) function applied to the number of row, eg.: 
