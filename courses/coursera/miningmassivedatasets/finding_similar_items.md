@@ -8,22 +8,24 @@ Many data mining problems can be expressed as finding similar items. E.g.:
 - Movies with similar fan sets or users with similar tastes -> recommender systems 
 - Entity resolution
 
-## There are three essential techniques to use
+## Essential techniques to use
 
-document -> |Shingling| -> sets -> |Hashing| -> tokens -> |Minhashing| -> signatures -> | Locality Sensitive Hashing| -> candidate pairs to test for similarity
+document -> |Shingling| -> sets -> |Minhashing| -> signatures -> | Locality Sensitive Hashing| -> candidate pairs to test for similarity
 
-# Shingling: sets
+
+## Shingling: sets
 Convert documents, emails, etc. to sets in order to convert a problem of documents similarity in one of sets intersection. 
 
 ```
-Jaccard Similarity of Sets = sets intersection / sets union
+Jaccard Similarity  = sets intersection / sets union
 ```
 
 Similar documents have similar k-shingles
 Change a word only affects k-shingles within distance k from the word and reordering paragraphs only affects the 2k shigles that cross paragraphs boundaries  
 
+
 ## Minhashing: signatures
-We can compress long shingles hashing them to tokens with (say) 4 bytes. This way a document is represented by its tokens. Two documents could (rarely) appear to have shingles in common when in fact only have in common the tokens
+We can compress a long number of shingles hashing them to tokens with (say) 4 bytes. This way a document is represented by its tokens. Two documents could (rarely) appear to have shingles in common when in fact only have in common the tokens. 
 
 Minhashing is a technique to convert large sets to short signatures preserving similarity. In order to achive this, we can use a matrix representation of sets. In each row put one element of the set of all possibles k-shingles. In columns, put sets (documents) 
 
@@ -36,7 +38,7 @@ aca                                     0                       0
 Another example: rows could be products and columns could be customers represented by the set of products they bought
 
 - algorithm in theory: 
-Let's order the rows in multiple permutations (say 100 or several hundred). For each row, we assign a minhash value to a set Si given by minhash function h. The value is this: the element in the first row for which column has a non 0 value  
+Let's order the rows in multiple permutations (say 100 or several hundred). For each row, we assign a minhash value to a set Si given by minhash function h. The value is the element in the first row for which column has a non 0 value  
 
 ```
 Surprising property: the probability that the minhash function for a random permutation of rows produces the same value for two sets equals the Jaccard similarity of those sets. Thus, the expected similarity of two signatures equals the Jaccard similarity of the columns or sets that the signatures represent. And the longer the signatures, the smaller will be the expected error.  
@@ -69,7 +71,8 @@ for each row r do begin
                     M(i, c) := hi(r);
 end;
 
-# Locality-Sensitive Hashing 
+
+## Locality-Sensitive Hashing 
 Focus on those pairs of signatures likely to be similar. For signature matrices: hash columns to many buckets, and make elements of the same bucket candidate pairs 
 
 Two columns c and d are a candidate pair if, and only if, their signatures agree in at least fraction t of the rows
