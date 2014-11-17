@@ -1,7 +1,6 @@
-Finding similar sets
-=====================
+#Finding similar sets
 
-# Applications
+## Applications
 Many data mining problems can be expressed as finding similar items. E.g.: 
 
 - Similar words in documents -> classification by topic
@@ -9,13 +8,9 @@ Many data mining problems can be expressed as finding similar items. E.g.:
 - Movies with similar fan sets or users with similar tastes -> recommender systems 
 - Entity resolution
 
-Question: 
-- How to measure similarity of two sets?
+## There are three essential techniques to use
 
-There are three essential techniques to use
-===========================================
-
-document -> |Shingling| -> sets -> |Hashing| -> tokens -> |Minhashing| -> signatures -> candidate pairs to test for similarity
+document -> |Shingling| -> sets -> |Hashing| -> tokens -> |Minhashing| -> signatures -> | Locality Sensitive Hashing| -> candidate pairs to test for similarity
 
 # Shingling: sets
 Convert documents, emails, etc. to sets in order to convert a problem of documents similarity in one of sets intersection. 
@@ -27,7 +22,7 @@ Jaccard Similarity of Sets = sets intersection / sets union
 Similar documents have similar k-shingles
 Change a word only affects k-shingles within distance k from the word and reordering paragraphs only affects the 2k shigles that cross paragraphs boundaries  
 
-# Minhashing: signatures
+## Minhashing: signatures
 We can compress long shingles hashing them to tokens with (say) 4 bytes. This way a document is represented by its tokens. Two documents could (rarely) appear to have shingles in common when in fact only have in common the tokens
 
 Minhashing is a technique to convert large sets to short signatures preserving similarity. In order to achive this, we can use a matrix representation of sets. In each row put one element of the set of all possibles k-shingles. In columns, put sets (documents) 
