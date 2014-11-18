@@ -84,6 +84,14 @@ end;
 
 
 ## Locality-Sensitive Hashing 
-Focus on those pairs of signatures likely to be similar. For signature matrices: hash columns to many buckets, and make elements of the same bucket candidate pairs 
+Focus on those pairs of signatures likely to be similar. 
 
-Two columns c and d are a candidate pair if, and only if, their signatures agree in at least fraction t of the rows
+For signature matrices: hash columns several times. Similar columns are likely to hash to the same bucket. Candidate pairs are those that hash at least one time to the same bucket. 
+
+Partition into bands, a big data implementation: 
+- divide matrix M into b bands of r rows each one
+- for each column, hash the portion of column in each band to one of k buckets. Make k as large as possible
+- candidate columns pairs are those that hash to the same bucket for >=1 bands
+- tune b and r to catch most of similar pairs but few non-similar pairs
+
+
