@@ -69,9 +69,7 @@ hi(r) = x + 1 mod 5
 | 3         | 4     |
 | 4         | 0     |
 
-
-See computing method explained and examples in "Mining massive datasets" book, page 83 
-
+```
 for each row r do begin
     for each hash function hi do
         compute hi (r);
@@ -81,6 +79,9 @@ for each row r do begin
                 if hi(r) is smaller than M(i, c) then
                     M(i, c) := hi(r);
 end;
+```
+
+See computing method explained and examples in "Mining massive datasets" book, page 83 
 
 
 ## Locality-Sensitive Hashing 
