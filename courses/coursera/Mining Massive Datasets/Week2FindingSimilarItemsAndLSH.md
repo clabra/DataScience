@@ -32,11 +32,11 @@ E.g.:
 The edit distance is the minimum number of character insertions and character deletions required to turn one string into
 another. Compute the edit distance between each pair of the strings he, she, his, and hers. Then, identify which of the
 following is a true statement about the number of pairs at a certain edit distance.
-Your Answer		Score	Explanation
-There are 4 pairs at distance 5.
-There are 3 pairs at distance 4.
-There is 1 pair at distance 4.	Correct	1.00
-There are 2 pairs at distance 1.
+
+- There are 4 pairs at distance 5.
+- There are 3 pairs at distance 4.
+- There is 1 pair at distance 4.
+- There are 2 pairs at distance 1.
 
 #### k-shingles
 
@@ -47,17 +47,17 @@ and also for the "document":
 BRICABRAC
 
 Answer the following questions:
+- How many 2-shingles does ABRACADABRA have?
+- How many 2-shingles does BRICABRAC have?
+- How many 2-shingles do they have in common?
+- What is the Jaccard similarity between the two documents"?
 
-How many 2-shingles does ABRACADABRA have?
-How many 2-shingles does BRICABRAC have?
-How many 2-shingles do they have in common?
-What is the Jaccard similarity between the two documents"?
 Then, find the true statement in the list below.
 
-The Jaccard similarity is 4/7.
-There are 5 shingles in common.	Correct
-ABRACADABRA has 5 2-shingles.
-The Jaccard similarity is 5/7.
+- The Jaccard similarity is 4/7.
+- There are 5 shingles in common.
+- ABRACADABRA has 5 2-shingles.
+- The Jaccard similarity is 5/7.
 
 
 ### Minhashing: signatures
@@ -95,10 +95,10 @@ minhash value of the stated column? Note: we give the minhash value in terms of 
 than the order of the row in the permutation. These two schemes are equivalent, since we only care whether hash values
 for two columns are equal, not what their actual values are.
 
-- The minhash value for C1 is R4	Incorrect
-- The minhash value for C3 is R4	Correct
-- The minhash value for C4 is R2	Incorrect
-- The minhash value for C4 is R5  Incorrect
+- The minhash value for C1 is R4
+- The minhash value for C3 is R4
+- The minhash value for C4 is R2
+- The minhash value for C4 is R5
 
 
 #### algorithm theory:
@@ -178,7 +178,7 @@ that the hash function for each band can be the identity function (i.e., columns
 they are identical in the band). Find all the candidate pairs, and then identify one of them in the list below.
 
 - C6 and C7
-- C2 and C5	Correct
+- C2 and C5
 - C1 and C7
 - C3 and C7
 
