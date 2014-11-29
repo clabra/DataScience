@@ -95,10 +95,10 @@ minhash value of the stated column? Note: we give the minhash value in terms of 
 than the order of the row in the permutation. These two schemes are equivalent, since we only care whether hash values
 for two columns are equal, not what their actual values are.
 
-The minhash value for C1 is R4	Incorrect
-The minhash value for C3 is R4	Correct
-The minhash value for C4 is R2	Incorrect
-The minhash value for C4 is R5  Incorrect
+- The minhash value for C1 is R4	Incorrect
+- The minhash value for C3 is R4	Correct
+- The minhash value for C4 is R2	Incorrect
+- The minhash value for C4 is R5  Incorrect
 
 
 #### algorithm theory:
@@ -177,10 +177,10 @@ Suppose we use locality-sensitive hashing with three bands of two rows each. Ass
 that the hash function for each band can be the identity function (i.e., columns hash to the same bucket if and only if
 they are identical in the band). Find all the candidate pairs, and then identify one of them in the list below.
 
-C6 and C7
-C2 and C5	Correct
-C1 and C7
-C3 and C7
+- C6 and C7
+- C2 and C5	Correct
+- C1 and C7
+- C3 and C7
 
 
 ## Applications
