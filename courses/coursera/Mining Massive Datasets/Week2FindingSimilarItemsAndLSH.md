@@ -260,9 +260,9 @@ following is a true statement about the number of pairs at a certain edit distan
     - Category: Classification
     - Complex object: ranking of items, parse tree, etc.
 
-Process:
-Estimate y = f(x) on training (X) and test (Y) sets
-Check that the same f(x) also works on unseen X' and Y' data
+- Algorithm:
+    - Estimate y = f(x) on training (X) and test (Y) sets
+    - Check that the same f(x) also works on unseen X' and Y' data
 
 In supervised learning data is labeled:
 we have many pairs {(x,y)} where:
