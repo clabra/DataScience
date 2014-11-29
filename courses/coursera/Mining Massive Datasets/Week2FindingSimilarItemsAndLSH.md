@@ -274,9 +274,10 @@ y is a class ({+1, -1} or a real number)
 Main question:
 how to effectively train, that is build (or find) the parameters of a model?
 
-##### k-nearest neighbors (instance based learning)
+##### k-nearest neighbor or k-NN (instance based learning)
 
-* Algorithm:
+* Algorithm to predict:
+
 - Build a model from training set: {(x,y)}
 - A query example (vector) q comes
 - For each item x in vector, find closest examples x*
@@ -284,23 +285,25 @@ how to effectively train, that is build (or find) the parameters of a model?
 
 * Works for regression and classification
 * Collaborative filtering is a example of k-NN classifier:
+
 - for a user x, find k most similar users that have rated movie y
 - predict rating of x, yx, as an average of yk
 
 * We need:
+
 - A metric of distance: how to find nearest neighbours?
 - How many neighbors look: k (in Kernel regression we look at all neighbours)
 - An optional weighting function
 - How to fit with the local points? (in k-Nearest neighbour just predict the average output among k nearest neighbors,
 in 1-Nearest take the value of closest point)
 
-Distance algorithm:
+* Algorithm to find neighbors:
 - given a set P of q points
 - given a query point q:
     - NN: find the nearest neighbor p of q in P
     - range search: find one/all points within a distance of r from q
 
-*Use **locality sensitive hashing** !*
+*Use locality sensitive hashing!*
 
 
 
