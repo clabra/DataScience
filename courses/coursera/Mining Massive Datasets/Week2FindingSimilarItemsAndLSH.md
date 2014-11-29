@@ -300,7 +300,7 @@ Distance algorithm:
     - NN: find the nearest neighbor p of q in P
     - range search: find one/all points within a distance of r from q
 
-*Use **locality sensitive hashing!** *
+*Use **locality sensitive hashing** !*
 
 
 
