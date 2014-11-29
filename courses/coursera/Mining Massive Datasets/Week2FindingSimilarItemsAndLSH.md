@@ -1,5 +1,6 @@
-# Week 2
-## Finding similar sets
+Week 2
+======
+# Finding similar sets
 
 ## Applications
 MMany data mining problems can be expressed as finding similar items. E.g.:
