@@ -3,7 +3,7 @@ Week 2
 # Finding similar sets
 
 ## Applications
-MMany data mining problems can be expressed as finding similar items. E.g.:
+Many data mining problems can be expressed as finding similar items. E.g.:
 
 - Similar words in documents -> classification by topic
 - Given a large set of documents, find documents similar -> detect plagiarism, avoid show the same information twice  
@@ -300,7 +300,7 @@ Distance algorithm:
     - NN: find the nearest neighbor p of q in P
     - range search: find one/all points within a distance of r from q
 
-**Use locality sensitive hashing!**
+*Use locality sensitive hashing!*
 
 
 
