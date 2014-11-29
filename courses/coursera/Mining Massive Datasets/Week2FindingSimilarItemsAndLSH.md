@@ -80,6 +80,7 @@ Another example: rows could be products and columns could be customers represent
 
 E.g.:
 Consider the following matrix:
+
 |    | C1 | C2 | C3 | C4 |
 |----|----|----|----|----|
 | R1 | 0  | 1  | 1  | 0  |
@@ -162,6 +163,7 @@ Partition into bands, a big data implementation:
 
 E.g.:
 Here is a matrix representing the signatures of seven columns, C1 through C7.
+
 | C1 | C2 | C3 | C4 | C5 | C6 | C7 |
 |----|----|----|----|----|----|----|
 | 1  | 2  | 1  | 1  | 2  | 5  | 4  |
