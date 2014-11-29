@@ -253,12 +253,12 @@ following is a true statement about the number of pairs at a certain edit distan
 
 ### Supervised Learning
 
-Objective: make a prediction
-Estimating a function f(x) so that y=f(x)
-Where y can be:
-- Real number: Regression
-- Category: Classification
-- Complex object: ranking of items, parse tree, etc.
+- Objective: make a prediction
+- Estimating a function f(x) so that y=f(x)
+- Where y can be:
+    - Real number: Regression
+    - Category: Classification
+    - Complex object: ranking of items, parse tree, etc.
 
 Process:
 Estimate y = f(x) on training (X) and test (Y) sets
@@ -300,7 +300,7 @@ Distance algorithm:
     - NN: find the nearest neighbor p of q in P
     - range search: find one/all points within a distance of r from q
 
-*Use locality sensitive hashing!*
+*Use **locality sensitive hashing!** *
 
 
 
