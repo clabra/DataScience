@@ -325,31 +325,36 @@ Frequent Itemsets:
 - frequent itemsets are sets of items that appear in at least s baskets
 
 ## Example:
-Items={milk, coke, pepsi, beer, juice}.
-Support = 3 baskets.
-B1 = {m, c, b}
-B2 = {m, p, j}
-B3 = {m, b}
-B4 = {c, j}
-B5 = {m, p, b}
-B6 = {m, c, b, j}
-B7 = {c, b, j}
-B8 = {b, c}
+- Items={milk, coke, pepsi, beer, juice}.
+- Support = 3 baskets.
 
-Frequent itemsets:
-{m}, {c}, {b}, {j},
-{m,b}, {b,c}, {c,j}.
+- B1 = {m, c, b}
+- B2 = {m, p, j}
+- B3 = {m, b}
+- B4 = {c, j}
+- B5 = {m, p, b}
+- B6 = {m, c, b, j}
+- B7 = {c, b, j}
+- B8 = {b, c}
+
+- Frequent itemsets:
+    - {m}, {c}, {b}, {j},
+    - {m,b}, {b,c}, {c,j}.
 
 ## Other applications
 
-### baskets = sentences, items = documents containing those sentences??? (isn't on the contrary?)
+### Plagiarism
+
+baskets = sentences, items = documents containing those sentences??? (isn't on the contrary?)
 
 Items that appear together too often could represent plagiarism.
 
 Notice items do not have to be “in” baskets.  But it is better if baskets have small numbers of items,
 while items n be in large numbers of baskets.
 
-### baskets = documents, items = words
+### Entities relationship
+
+baskets = documents, items = words
 
 Unusual words appearing together in a large number of documents, e.g., “Brad” and “Angelina,” may indicate an interesting
 relationship.
