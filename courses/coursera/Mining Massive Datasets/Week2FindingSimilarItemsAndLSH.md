@@ -307,4 +307,8 @@ Distance algorithm:
 
 ##### Support Vector Machines (SVM)
 
+To see in Week 6
+
 ##### Decision trees
+
+Not studied in this course
