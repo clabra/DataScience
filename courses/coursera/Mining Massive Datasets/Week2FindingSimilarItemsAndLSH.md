@@ -300,9 +300,7 @@ how to effectively train, that is build (or find) the parameters of a model?
         - NN: find the nearest neighbor p of q in P
         - range search: find one/all points within a distance of r from q
 
-*Use locality sensitive hashing!*
-
-
+IMPORTANT: *Use locality sensitive hashing!* to find close neighbors
 
 
 ##### Support Vector Machines (SVM)
@@ -310,5 +308,117 @@ how to effectively train, that is build (or find) the parameters of a model?
 To see in Week 6
 
 ##### Decision trees
+
+
+# Frequent Itemsets
+
+The market-basket model (many people buy beer and diapers together):
+- a large set of items, e.g. things sold in a supermarket
+- a large set of basket each of which is a small set of items. E.g. the set of things a customer buys one day
+
+Objective:
+Find sets of items that appear frequently in the baskets
+
+Frequent Itemsets:
+- support for itemset l is the number of baskets containing all items in itemset l
+- support threshold s
+- frequent itemsets are sets of items that appear in at least s baskets
+
+## Example:
+Items={milk, coke, pepsi, beer, juice}.
+Support = 3 baskets.
+B1 = {m, c, b}
+B2 = {m, p, j}
+B3 = {m, b}
+B4 = {c, j}
+B5 = {m, p, b}
+B6 = {m, c, b, j}
+B7 = {c, b, j}
+B8 = {b, c}
+
+Frequent itemsets:
+{m}, {c}, {b}, {j},
+{m,b}, {b,c}, {c,j}.
+
+## Other applications
+
+### baskets = sentences, items = documents containing those sentences??? (isn't on the contrary?)
+
+Items that appear together too often could represent plagiarism.
+
+Notice items do not have to be “in” baskets.  But it is better if baskets have small numbers of items,
+while items n be in large numbers of baskets.
+
+### baskets = documents, items = words
+
+Unusual words appearing together in a large number of documents, e.g., “Brad” and “Angelina,” may indicate an interesting
+relationship.
+
+## Association rules
+If-then rules about the contents of baskets.
+{i1,...,ik} -> j
+
+Question: find all association rules with support  s and confidence  c
+"support" of an association rule is the support of the set of items on the left
+"confidence": is the probability of j given i1,...,ik. That is, the fraction of the baskets with i 1,…,i k that also contain j.
+
+Hard part: find the frequent itemsets
+
+## Example
+Imagine there are 100 baskets, numbered 1,2,...,100, and 100 items, similarly numbered. Item i is in basket j if and
+only if i divides j evenly. For example, basket 24 is the set of items {1,2,3,4,6,8,12,24}. Describe all the association
+rules that have 100% confidence. Which of the following rules has 100% confidence?
+
+- {1,3,6} → 12
+- {2,3,5} → 45
+- {4,6} → 12
+- {3,4,5} → 42
+
+## Algorithms:
+- Naive algorithms requiring memory proportional to #items^2 are resource expensive (more details in the course notes)
+- Use A-priori algorithm:
+    - Pass 1: Read baskets and count in main memory the occurrences of each item.
+      Requires only memory proportional to #items.
+      Items that appear at least s times are the frequent items.
+    - Pass 2: Read baskets again and count in main memory only those pairs both of which were found in Pass 1 to be frequent.
+      Requires memory proportional to square of frequent items only (for counts), plus a list of the frequent items
+      (so you know what must be counted).
+    - See course slides for passes beyond two
+
+## Example (about monotonicity issues justifying a-priori algorithm)
+Suppose ABC is a frequent itemset and BCDE is NOT a frequent itemset. Given this information, we can be sure that certain
+other itemsets are frequent and sure that certain itemsets are NOT frequent. Other itemsets may be either frequent or not.
+Which of the following is a correct classification of an itemset?
+
+- BC is frequent.
+- BCDEF can be either frequent or not frequent.
+- ABCDE can be either frequent or not frequent.
+- BCF is not frequent.
+
+## Example (a-priori alorithm)
+Suppose we have transactions that satisfy the following assumptions:
+s, the support threshold, is 10,000.
+There are one million items, which are represented by the integers 0,1,...,999999.
+There are N frequent items, that is, items that occur 10,000 times or more.
+There are one million pairs that occur 10,000 times or more.
+There are 2M pairs that occur exactly once. M of these pairs consist of two frequent items, the other M each have at least
+one nonfrequent item.
+No other pairs occur at all.
+Integers are always represented by 4 bytes.
+Suppose we run the a-priori algorithm to find frequent pairs and can choose on the second pass between the triangular-matrix
+method for counting candidate pairs (a triangular array count[i][j] that holds an integer count for each pair of items
+(i, j) where i < j) and a hash table of item-item-count triples. Neglect in the first case the space needed to translate
+between original item numbers and numbers for the frequent items, and in the second case neglect the space needed for
+the hash table. Assume that item numbers and counts are always 4-byte integers.
+As a function of N and M, what is the minimum number of bytes of main memory needed to execute the a-priori algorithm
+on this data? Demonstrate that you have the correct formula by selecting, from the choices below, the triple consisting
+of values for N, M, and the (approximate, i.e., to within 10%) minumum number of bytes of main memory, S, needed for
+the a-priori algorithm to execute with this data.
+
+- N = 60,000; M = 200,000,000; S = 7,200,000,000
+- N = 20,000; M = 80,000,000; S = 1,100,000,000
+- N = 100,000; M = 100,000,000; S = 1,200,000,000
+- N = 100,000; M = 40,000,000; S = 800,000,000
+
 
 
