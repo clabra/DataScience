@@ -26,19 +26,8 @@ Jaccard Similarity  = sets intersection / sets union
 - Similar documents have similar k-shingles
 - Change a word only affects k-shingles within distance k from the word and reordering paragraphs only affects the 2k shigles that cross paragraphs boundaries
 
-E.g.:
 
-#### Edit distance
-The edit distance is the minimum number of character insertions and character deletions required to turn one string into
-another. Compute the edit distance between each pair of the strings he, she, his, and hers. Then, identify which of the
-following is a true statement about the number of pairs at a certain edit distance.
-
-- There are 4 pairs at distance 5.
-- There are 3 pairs at distance 4.
-- There is 1 pair at distance 4.
-- There are 2 pairs at distance 1.
-
-#### k-shingles
+#### Example: k-shingles
 
 Find the set of 2-shingles for the "document":
 
@@ -78,7 +67,7 @@ can use a matrix representation of sets. In each row put one element of the set 
 Another example: rows could be products and columns could be customers represented by the set of products they bought
 
 
-E.g.:
+#### Example
 Consider the following matrix:
 
 |    | C1 | C2 | C3 | C4 |
@@ -161,7 +150,7 @@ Partition into bands, a big data implementation:
 - candidate columns pairs are those that hash to the same bucket for >=1 bands
 - tune b and r to catch most of similar pairs but few non-similar pairs
 
-E.g.:
+### Example
 Here is a matrix representing the signatures of seven columns, C1 through C7.
 
 | C1 | C2 | C3 | C4 | C5 | C6 | C7 |
@@ -251,7 +240,15 @@ differences, summing and taking the r th root.)
 - Edit distance for strings = number of inserts and deletes to change one string into another.
 - Hamming Distance for bit vectors = the number of positions in which they differ.
 
-## Large scale machine learning. Nearest neighbors
+#### Example: Edit distance
+The edit distance is the minimum number of character insertions and character deletions required to turn one string into
+another. Compute the edit distance between each pair of the strings he, she, his, and hers. Then, identify which of the
+following is a true statement about the number of pairs at a certain edit distance.
+
+- There are 4 pairs at distance 5.
+- There are 3 pairs at distance 4.
+- There is 1 pair at distance 4.
+- There are 2 pairs at distance 1.## Large scale machine learning. Nearest neighbors
 
 ### Supervised Learning
 
