@@ -212,6 +212,7 @@ data, with a refined, local view:
 
 Example:
  - Global:
+
     - Mean movie rating: 3.7 stars
     -  The Sixth Sense is 0.5 stars above avg.
     -  Joe rates 0.2 stars below avg.
@@ -220,17 +221,19 @@ Baseline estimation:
 Joe will rate The Sixth Sense 4 stars
 
 -  Local neighborhood (CF/NN):
+
     - Joe didn’t like related movie Signs
 
  Final estimate:
 Joe will rate The Sixth Sense 3.8 stars
 
 
-In practice we get better estimates if we model deviations:
+In practice we get better estimates if we model **deviations**:
+
 rxi	=	bxi + ∑ sxy ryi/	∑ sxy
 
-bxi = mu + bx + bi
-mu  = overall mean rating
-bx  = rating deviation of user x
+- bxi = mu + bx + bi
+- mu  = overall mean rating
+- bx  = rating deviation of user x
     = (avg. rating of user x) – mu
-bi  = (avg. rating of movie i) – mu
+- bi  = (avg. rating of movie i) – mu
