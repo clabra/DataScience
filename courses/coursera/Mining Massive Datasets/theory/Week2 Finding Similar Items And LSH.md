@@ -310,6 +310,8 @@ To see in Week 6
 
 ##### Decision trees
 
+To see in Week 6
+
 
 # Frequent Itemsets
 
