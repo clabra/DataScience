@@ -5,7 +5,7 @@ Week 3
 
 AGM is a generative model for graphs using:
 - nodes V, Communities C, Memberships M
-- each community c has a single probability pc
+- each community c has a single probability Pc
 
 For each pair of nodes in community A, we connect them with probability Pa.
 
@@ -22,18 +22,26 @@ Probability of connection is proportional to the product of strengths (see formu
 
 # Mining Data Streams
 
-- Ad-hoc and standing queries. Architecture
-- One approach: queries are about a window (the last N events)
-- What if N doesn't fit in memory ?
-- Example: averages
+- Ad-hoc and standing queries. See architecture diagram in course slides
+- One approach: queries are asked about a window (the last N events)
+- Problem: what if N doesn't fit in memory?. We'll have to sample input
+
+There are some queries over streams that are very ease to implement
+Example: averages
     - What is the average of the integers in the window?
     - For the first N inputs, sum and count to get the average.
     - Afterward, when a new input i arrives, change the average by adding (i - j)/N, where j is the oldest integer in the window.
 
+But for another queries we have to apply next techniques.
+
 ## Sampling a Stream
-Sampling sometimes doesn't work. By instance trying to find the fraction of queries that are unique, asked only once,
+
+Sampling sometimes doesn't work.
+
+Example:
+Trying to find the fraction of queries that are unique, asked only once,
 sampling 10% of the queries stream.
-Our error was sample based on the position in the stream, rather than *sample based on the value of the stream element*.
+Our error was to sample based on the position in the stream, rather than *sample based on the value of the stream element*.
 
 ### Algorithm:
     - hash search queries to 10 buckets, 0...9
@@ -41,12 +49,12 @@ Our error was sample based on the position in the stream, rather than *sample ba
     - this way, all or none of the query instances will be selected
     - therefore the fraction of queries in the sample will be the same than in the whole stream
 
-### Problem: what if the total sample size is limited?
+Problem: what if the total sample size is limited?
 
 Solution:
 Hash to a large number of buckets
 
-Example (fixed sample size):
+#### Example (fixed sample size):
 - We want to limit the size in our 10% search-query sample.
 - Hash to, say, 100 buckets, 0...99
 - Take for the sample those elements hashing to buckets 0 to 9
