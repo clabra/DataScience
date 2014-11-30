@@ -204,6 +204,18 @@ data, with a refined, local view:
  - Global:
  Overall deviations of users/movies
 
+```
+In practice we get better estimates if we model global deviations of users/models:
+
+rxi	=	bxi + ∑ sxy ryi/	∑ sxy
+
+- bxi = mu + bx + bi
+- mu  = overall mean rating
+- bx  = rating deviation of user x
+    = (avg. rating of user x) – mu
+- bi  = (avg. rating of movie i) – mu
+```
+
 -  Factorization:
  Addressing “regional” effects
 
@@ -228,14 +240,3 @@ Joe will rate The Sixth Sense 4 stars
 Joe will rate The Sixth Sense 3.8 stars
 
 
-```
-In practice we get better estimates if we model **deviations**:
-
-rxi	=	bxi + ∑ sxy ryi/	∑ sxy
-
-- bxi = mu + bx + bi
-- mu  = overall mean rating
-- bx  = rating deviation of user x
-    = (avg. rating of user x) – mu
-- bi  = (avg. rating of movie i) – mu
-```
