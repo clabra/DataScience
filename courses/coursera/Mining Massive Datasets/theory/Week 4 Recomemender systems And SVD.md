@@ -256,8 +256,10 @@ Reflects latent factors as Serious/Funny movies, Female oriented/Male oriented, 
 
 ### Finding the latent factors
 
-If we try to minimize error function for training data overfitting can occur
+If we try to minimize error function for training data, overfitting can occur
+
 To avoid overfitting we introduce regularization terms in the error function (see slides)
+
 To find P and Q use stochastic gradient descent algorithm
 
 
