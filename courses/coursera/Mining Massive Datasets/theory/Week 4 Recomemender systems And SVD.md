@@ -152,6 +152,7 @@ Cons:
 ## Collaborative
 
 Let	rx be the	vector	of	user	x’s	ratings
+
 Let	N	be	the	set	of	k	users	most	similar	to	x who	have	also	rated	item	i
 
 Prediction	for	user	x	and	item	i:
@@ -184,9 +185,9 @@ Root-mean-square error (RMSE)
 
 ((Sum (rxi - rxi*) ^2 ) / N) ^ 1/2
 
-where	N	=	|T|, number of elements in the test
-rxi is	the	predicted
-rxi* is	the	actual
+- where	N	=	|T|, number of elements in the test
+- rxi is	the	predicted
+- rxi* is	the	actual
 
 Problems with error measures:
 - narrow on accuracy sometimes means the poin. Consider context, order of prediciotns, etc.
