@@ -95,7 +95,8 @@ Set of words with highest TF-IDF scores, together with their scores
 
 #### User profile
 ```
-The (weighted) average of items rated by user i1,...,in. A variant is normalize weightings using average rating of user
+User profile =  the (weighted) average of item profiles
+A variant is normalize weightings using average rating of user
 ```
 
 More sophisticated aggregations are possible
@@ -103,6 +104,27 @@ More sophisticated aggregations are possible
 #### Example 1: Boolean Utility Matrix
 
 
+#### Making predictions
+
+```
+Cosine similarity:
+
+cosine of angle between the user profile vector and the item proile vector
+
+U(x,i) = cos = (x . i) / (|x| * |i|)
+```
+
+#### Pros and Cons
+Pros:
+- no need for data of other users
+- able to recommend to users with unique tastes
+- idem new and impopular items
+- easy to explain why we are recommending an item
+
+Cons:
+- finding the appropiate features is hard (movies, music, images)
+- Overspecialization
+- Cold-star problem for new users
 
 
 
