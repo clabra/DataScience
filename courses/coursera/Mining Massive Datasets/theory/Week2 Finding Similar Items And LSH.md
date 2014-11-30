@@ -302,7 +302,6 @@ how to effectively train, that is build (or find) the parameters of a model?
 
     IMPORTANT: *Use locality sensitive hashing!* to find close neighbors
 
-
 ##### Support Vector Machines (SVM)
 
 To see in Week 6
