@@ -226,7 +226,8 @@ rxi	=	bxi + ∑ sxy ryi/	∑ sxy
 
 - Global:
 
-    - Mean movie rating: 3.7 stars
+Mean movie rating: 3.7 stars
+
     -  The Sixth Sense is 0.5 stars above avg.
     -  Joe rates 0.2 stars below avg.
 
