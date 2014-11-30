@@ -102,6 +102,27 @@ A variant is normalize weightings using average rating of user
 More sophisticated aggregations are possible
 
 #### Example 1: Boolean Utility Matrix
+[Pending]
+
+Items are movies, only feature is “Actor”
+Item profile: vector	with	0	or	1	for	each	Actor
+
+Suppose	user x has	watched	5	movies
+2	movies	featuring	actor	A
+3	movies	featuring	actor	B
+User	profile	=	mean	of	item	profiles
+Feature	A’s	weight	=	2/5	=	0.4
+Feature	B’s	weight	=	3/5	=	0.6
+
+Same	example,	1-5	star	ratings
+Actor	A’s	movies	rated	3	and	5
+Actor	B’s	movies	rated	1,	2	and	4
+
+Useful	step:	Normalize	ratings	by	subtracting	 user’s	mean	rating
+Actor	A’s	normalized	ratings	=	0,	+2
+    Profile	weight	=	(0	+	2)/2	=	1
+Actor	B’s	normalized	ra?ngs	=	-2,	-1,	+1
+    Profile	weight	=	-2/3
 
 
 #### Making predictions
@@ -130,4 +151,36 @@ Cons:
 
 ## Collaborative
 
+Let	rx be the	vector	of	user	x’s	ratings
+Let	N	be	the	set	of	k	users	most	similar	to	x who	have	also	rated	item	i
+
+Prediction	for	user	x	and	item	i:
+- Option	1:
+average of ratings from other similar users
+rxi	=	1/k ∑ ryi , y: element of N
+  where sxy	=	sim(x,y)
+
+- Option	2:
+idem, weighting the ratings by similarity
+rxi	=	∑ sxy ryi/	∑ sxy
+Similarity can be Jaccard, cosine (simple or with variants)
+
+### Item-item collaborative:
+Estimate	rating	for	item	i	based	on	ratings	for	similar	 items
+Same prediciton model as in user-user
+
+In	theory,	user-user	and	item-item	are	dual	 approaches
+In	practice,	item-item	outperforms	user-user	 in	many	use	cases
+Because items	are	“simpler”	than	users
+
 ## Evaluation
+
+Root-mean-square error (RMSE)
+((Sum (rxi - rxi*) ^2 ) / N) ^ 1/2
+where	N	=	|T|, number of elements in the test
+rxi is	the	predicted
+rxi* is	the	actual
+
+Problems with error measures:
+- narrow on accuracy sometimes means the poin. Consider context, order of prediciotns, etc.
+- penalize a method that is good for high ratings (what we care about) and bad for others
