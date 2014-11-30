@@ -40,8 +40,8 @@ constraints may be satisfied only to a close approximation.
 
 Question Explanation
 
-The dot product of [2/7,3/7,6/7] and [x,y,z] must be 0
-Also, the length of the vector [x,y,z] must be 1,
+- The dot product of [2/7,3/7,6/7] and [x,y,z] must be 0
+- Also, the length of the vector [x,y,z] must be 1,
 
 
 ## Question 2
