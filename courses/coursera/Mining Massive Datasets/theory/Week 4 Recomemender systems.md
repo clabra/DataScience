@@ -256,14 +256,67 @@ Reflects latent factors as Serious/Funny movies, Female oriented/Male oriented, 
 
 ### Finding the latent factors
 
-If we try to minimize error function for training data, overfitting can occur
+If we try to minimize error function for training data, overfitting can occur.
 
-To avoid overfitting we introduce regularization terms in the error function (see slides)
+To avoid overfitting we introduce regularization terms in the error function (see slides).
 
-To find P and Q use stochastic gradient descent algorithm
+To find P and Q use stochastic gradient descent algorithm.
 
+## Quizzes
 
+- Question 1
 
+Here is a table of 1-5 star ratings for five movies (M, N, P. Q. R) by three raters (A, B, C).
 
+M	N	P	Q	R
+A	1	2	3	4	5
+B	2	3	2	5	3
+C	5	5	5	3	2
 
+Normalize the ratings by subtracting the average for each row and then subtracting the average for each column in the
+resulting table. Then, identify the true statement about the normalized table.
 
+- The smallest element is (B,P).
+- The entry (B,M) is -1/3.
+- The entry (A,Q) is -3.
+- The entry (C,P) is 4/3.
+
+- Question 2
+
+Below is a table giving the profile of three items.
+
+A	1	0	1	0	1	2
+B	1	1	0	0	1	6
+C	0	1	0	1	0	2
+
+The first five attributes are Boolean, and the last is an integer "rating." Assume that the scale factor for the rating
+is α. Compute, as a function of α, the cosine distances between each pair of profiles. For each of α = 0, 0.5, 1, and 2,
+determine the cosine of the angle between each pair of vectors. Which of the following is FALSE?
+
+- For α = 1, B is closer to C than A is.
+- For α = 2, B is closer to C than A is.
+- For α = 2, C is closer to B than A is.
+- For α = 0.5, C is closer to B than A is.
+
+Hint: After computing the dot products of the vectors, with α mutiplying the last component, compute the lengths of the
+vectors, also as a function of α. For example, |C| = sqrt(2 + 4α2). The cosine of the angle between vectors is their dot
+product divided by the lengths of both vectors.
+
+Question Explanation
+
+First, we must compute the dot products of the three pairs of vectors.
+A.B = 2 + 12α2
+A.C = 4α2
+B.C = 1 + 12α2
+
+Next, compute the lengths of the vectors:
+
+|A| = sqrt(3 + 4α2)
+|B| = sqrt(3 + 36α2)
+|C| = sqrt(2 + 4α2)
+
+From these, we can compute the cosines of the angles between each pair of vectors:
+
+cos(A,B) = (2 + 12α2)/sqrt(9 + 120α2 + 144α4)
+cos(A,C) = (4α2)/sqrt(6 + 20α2 + 16α4)
+cos(B,C) = (1 + 12α2)/sqrt(6 + 84α2 + 144α4)
