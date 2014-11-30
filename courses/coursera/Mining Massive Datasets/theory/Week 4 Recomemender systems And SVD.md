@@ -240,4 +240,28 @@ Joe will rate The Sixth Sense 4 stars
 Final estimate:
 Joe will rate The Sixth Sense 3.8 stars
 
+### Latent factor recommender system
+
+
+```
+Single Value Decomposition (see more in next lessons):
+R ~ Q * Pt
+
+R: recommendations matrix
+Q:
+Pt:
+```
+
+Reflects latent factors as Serious/Funny movies, Female oriented/Male oriented, etc.
+
+### Finding the latent factors
+
+If we try to minimize error function for training data overfitting can occur
+To avoid overfitting we introduce regularization terms in the error function (see slides)
+To find P and Q use stochastic gradient descent algorithm
+
+
+
+
+
 
