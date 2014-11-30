@@ -192,3 +192,45 @@ Root-mean-square error (RMSE)
 Problems with error measures:
 - narrow on accuracy sometimes means the poin. Consider context, order of prediciotns, etc.
 - penalize a method that is good for high ratings (what we care about) and bad for others
+
+## Latent factor models
+
+Netflix challenge
+
+### Multi-scale modeling (deviations)
+In practice we get better results with multi-scale modeling of the data: combine top level, “regional” modeling of the
+data, with a refined, local view:
+
+ - Global:
+ Overall deviations of users/movies
+
+-  Factorization:
+ Addressing “regional” effects
+
+-  Collaborative filtering:
+ Extract local patterns
+
+Example:
+ - Global:
+    - Mean movie rating: 3.7 stars
+    -  The Sixth Sense is 0.5 stars above avg.
+    -  Joe rates 0.2 stars below avg.
+
+Baseline estimation:
+Joe will rate The Sixth Sense 4 stars
+
+-  Local neighborhood (CF/NN):
+    - Joe didn’t like related movie Signs
+
+ Final estimate:
+Joe will rate The Sixth Sense 3.8 stars
+
+
+In practice we get better estimates if we model deviations:
+rxi	=	bxi + ∑ sxy ryi/	∑ sxy
+
+bxi = mu + bx + bi
+mu  = overall mean rating
+bx  = rating deviation of user x
+    = (avg. rating of user x) – mu
+bi  = (avg. rating of movie i) – mu
