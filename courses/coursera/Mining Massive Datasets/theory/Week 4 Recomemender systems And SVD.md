@@ -228,6 +228,7 @@ Joe will rate The Sixth Sense 4 stars
 Joe will rate The Sixth Sense 3.8 stars
 
 
+```
 In practice we get better estimates if we model **deviations**:
 
 rxi	=	bxi + ∑ sxy ryi/	∑ sxy
@@ -237,3 +238,4 @@ rxi	=	bxi + ∑ sxy ryi/	∑ sxy
 - bx  = rating deviation of user x
     = (avg. rating of user x) – mu
 - bi  = (avg. rating of movie i) – mu
+```
