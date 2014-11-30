@@ -222,9 +222,9 @@ rxi	=	bxi + ∑ sxy ryi/	∑ sxy
 -  Collaborative filtering:
  Extract local patterns
 
-Example:
- - Global:
+#### Example:
 
+Global:
     - Mean movie rating: 3.7 stars
     -  The Sixth Sense is 0.5 stars above avg.
     -  Joe rates 0.2 stars below avg.
@@ -232,11 +232,10 @@ Example:
 Baseline estimation:
 Joe will rate The Sixth Sense 4 stars
 
--  Local neighborhood (CF/NN):
-
+Local neighborhood (CF/NN):
     - Joe didn’t like related movie Signs
 
- Final estimate:
+Final estimate:
 Joe will rate The Sixth Sense 3.8 stars
 
 
