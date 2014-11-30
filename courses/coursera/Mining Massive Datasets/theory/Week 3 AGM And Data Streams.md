@@ -75,6 +75,7 @@ Probability a given target is hit by a given dart = 1/t.
 Probability none of d darts hit a given t target is:
 (1-1/t)^d
 rewrite as (1-1/t) ^ t(d/t) ~= e ^ (-d/t)
+```
 
 
 #### Example
