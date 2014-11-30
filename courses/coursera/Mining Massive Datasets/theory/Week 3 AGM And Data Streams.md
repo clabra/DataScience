@@ -3,14 +3,16 @@ Week 3
 
 # Affiliation Graph Model (AGM)
 
-AGM is a model used to generate (predict) networks. It uses probability of
+AGM is a generative model for graphs using:
+- nodes V, Communities C, Memberships M
+- each community c has a single probability pc
 
-For each pair of nodes in community A, we connect them with probability pA
-The overall edge probability is:
+For each pair of nodes in community A, we connect them with probability Pa.
 
-P(u,v) = 1 - PI(1-pc)
-c communities shared by nodes u and v
-Think of this as an “OR” function: If at least 1 community says “YES” we create an edge
+We can calculate the overall edge probability P(u, v) beween nodes u and v as a function of probabilities Pc (see formula
+in course slides):
+- c communities shared by nodes u and v
+- Think of this as an “OR” function: If at least 1 community says “YES” we create an edge
 
 # BigCLAM
 Memberships have strengths
