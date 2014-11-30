@@ -300,7 +300,7 @@ how to effectively train, that is build (or find) the parameters of a model?
         - NN: find the nearest neighbor p of q in P
         - range search: find one/all points within a distance of r from q
 
-IMPORTANT: *Use locality sensitive hashing!* to find close neighbors
+    IMPORTANT: *Use locality sensitive hashing!* to find close neighbors
 
 
 ##### Support Vector Machines (SVM)
