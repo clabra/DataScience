@@ -156,13 +156,19 @@ Let	N	be	the	set	of	k	users	most	similar	to	x who	have	also	rated	item	i
 
 Prediction	for	user	x	and	item	i:
 - Option	1:
+
 average of ratings from other similar users
+
 rxi	=	1/k ∑ ryi , y: element of N
+
   where sxy	=	sim(x,y)
 
 - Option	2:
+
 idem, weighting the ratings by similarity
+
 rxi	=	∑ sxy ryi/	∑ sxy
+
 Similarity can be Jaccard, cosine (simple or with variants)
 
 ### Item-item collaborative:
@@ -170,13 +176,14 @@ Estimate	rating	for	item	i	based	on	ratings	for	similar	 items
 Same prediciton model as in user-user
 
 In	theory,	user-user	and	item-item	are	dual	 approaches
-In	practice,	item-item	outperforms	user-user	 in	many	use	cases
-Because items	are	“simpler”	than	users
+In	practice,	item-item	outperforms	user-user	 in	many	use	cases because items	are	“simpler”	than	users
 
 ## Evaluation
 
 Root-mean-square error (RMSE)
+
 ((Sum (rxi - rxi*) ^2 ) / N) ^ 1/2
+
 where	N	=	|T|, number of elements in the test
 rxi is	the	predicted
 rxi* is	the	actual
