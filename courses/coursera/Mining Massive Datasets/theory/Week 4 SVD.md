@@ -26,6 +26,15 @@ CUR is better to compute
 
 # Questions
 
+To solve next questions take in account that:
+
+```
+If columns in a matrix form a orthonormal base, then:
+- The dot product between any two columns are 0
+- The lenght of the column vector is 1
+```
+
+
 ## Question 1
 Note: In this question, all columns will be written in their transposed form, as rows, to make the typography simpler.
 Matrix M has three rows and two columns, and the columns form an orthonormal basis. One of the columns is [2/7,3/7,6/7].
@@ -37,11 +46,6 @@ constraints may be satisfied only to a close approximation.
 [.608, -.459, -.119]
 [-.548, .401, .273]
 [.429, .857, .286]
-
-Question Explanation
-
-- The dot product of [2/7,3/7,6/7] and [x,y,z] must be 0
-- Also, the length of the vector [x,y,z] must be 1,
 
 
 ## Question 2
@@ -56,9 +60,6 @@ y = 3z
 x = 2y
 2z = 3x
 
-Question Explanation
-
-The dot product of [x,y,z] with each of the two other columns must be 0.
 
 ## Question 3
 Suppose we have three points in a two dimensional space: (1,1), (2,2), and (3,4). We want to perform PCA on these points,
@@ -93,8 +94,5 @@ to make the calculations simpler.
 - [-1, 1, -1]
 - [-2, 3, -1]
 
-Question Explanation
-
-Vectors are orthogonal if and only if their dot product (sum of the products of their corresponding components) is 0.
 
 
