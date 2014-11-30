@@ -161,13 +161,13 @@ average of ratings from other similar users
 
 rxi	=	1/k ∑ ryi , y: element of N
 
-  where sxy	=	sim(x,y)
 
 - Option	2:
 
 idem, weighting the ratings by similarity
 
 rxi	=	∑ sxy ryi/	∑ sxy
+  where sxy	=	sim(x,y)
 
 Similarity can be Jaccard, cosine (simple or with variants)
 
