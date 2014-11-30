@@ -41,7 +41,9 @@ Sampling sometimes doesn't work.
 Example:
 Trying to find the fraction of queries that are unique, asked only once,
 sampling 10% of the queries stream.
-Our error was to sample based on the position in the stream, rather than *sample based on the value of the stream element*.
+Our error was to sample based on the position in the stream, rather than
+
+    - sample based on the value of the stream element.
 
 ### Algorithm:
     - hash search queries to 10 buckets, 0...9
