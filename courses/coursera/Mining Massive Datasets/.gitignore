@@ -1,4 +1,9 @@
 exercises/*
 *.pdf
 .idea/
-mmds/*
+mmds
+.DS_Store
+../../../.DS_Store
+../../.DS_Store
+../.DS_Store
+code
